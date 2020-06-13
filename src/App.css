@@ -40,3 +40,15 @@ h2 {
 .navbar-dark {
   background-color: #901CAD;
 }
+
+.comment-button{
+  color: #901CAD;
+  border-color: #901CAD;
+  margin-bottom: 5px;
+  
+}
+
+.comment-button:hover {
+  color: white;
+  background-color: #901CAD
+}

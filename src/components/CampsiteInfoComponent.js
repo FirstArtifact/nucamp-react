@@ -3,6 +3,7 @@ import { Card, CardImg, CardText, CardBody, Breadcrumb, BreadcrumbItem,
     Button, Modal, ModalHeader, ModalBody, Label } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { Control, LocalForm, Errors } from 'react-redux-form';
+import '../App.css'
 
 const maxLength = len => val => !(val) || (val.length <= len);
 const minLength = len => val => val && (val.length >= len);
@@ -67,7 +68,7 @@ class CommentForm extends Component {
     render() {
         return (
             <div>
-                <Button outline onClick={this.toggleModal}>
+                <Button outline className='comment-button' onClick={this.toggleModal}>
                     <i className="fa fa-pencil fa-lg" /> Submit Comment
                 </Button>
                 <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
