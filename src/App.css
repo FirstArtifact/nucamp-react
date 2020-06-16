@@ -48,7 +48,22 @@ h2 {
   
 }
 
-.comment-button:hover {
-  color: white;
-  background-color: #901CAD
+.comment-button:hover,
+.comment-button:active {
+  color: white !important;
+  background-color: #901CAD !important;
 }
+
+.login-button{
+  color: whitesmoke;
+  border-color: whitesmoke;
+  
+}
+
+.login-button:hover,
+.login-button:active {
+  color: white !important;
+  background-color: #0069D9 !important;
+  border-color: #0069D9;
+}
+
