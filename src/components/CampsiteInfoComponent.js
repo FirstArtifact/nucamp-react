@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { baseUrl } from '../shared/baseUrl';
 import {
   Card,
   CardImg,
@@ -24,7 +25,7 @@ function RenderCampsite({ campsite }) {
   return (
     <div className="col-md-5 m-1">
       <Card>
-        <CardImg top src={campsite.image} alt={campsite.name} />
+      <CardImg top src={baseUrl + campsite.image} alt={campsite.name} />
         <CardBody>
           <CardText>{campsite.description}</CardText>
         </CardBody>
@@ -33,7 +34,7 @@ function RenderCampsite({ campsite }) {
   );
 }
 
-function RenderComments({ comments }) {
+function RenderComments({ comments, addComment, campsiteId }) {
   if (comments) {
     return (
       <div className="col-md-5 m-1">
@@ -54,7 +55,7 @@ function RenderComments({ comments }) {
             </div>
           );
         })}
-        <CommentForm />
+         <CommentForm campsiteId={campsiteId} addComment={addComment} />
       </div>
     );
   }
@@ -79,8 +80,7 @@ class CommentForm extends Component {
 
   handleSubmit(values) {
     this.toggleModal();
-    console.log("Current State is: " + JSON.stringify(values));
-    alert("Current State is: " + JSON.stringify(values));
+    this.props.addComment(this.props.campsiteId, values.rating, values.author, values.text);
   }
 
   render() {
