@@ -7,13 +7,14 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 
 export const ConfigureStore = () => {
     const store = createStore(
-        composeWithDevTools(),
+        
         combineReducers({
             campsites: Campsites,
             comments: Comments,
             partners: Partners,
             promotions: Promotions
-        })
+        }),
+        composeWithDevTools()
     );
     return store;
 }
