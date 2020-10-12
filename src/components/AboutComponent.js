@@ -53,7 +53,7 @@ function PartnerList(props) {
 }
 
 
-const About(props) {
+const About = (props) => {
 
     return (
         <div className="container">
