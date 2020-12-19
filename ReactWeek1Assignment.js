@@ -22,6 +22,6 @@ class Bootcamp {
             this.students.push(student);
             console.log(`Registering ${student.name} to ${this.name} class with the email "${student.email}"`)
         }
-        return this.studentes;
+        return this.students;
     }
 }
